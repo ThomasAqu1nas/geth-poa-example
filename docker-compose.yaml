@@ -1,0 +1,69 @@
+version: '3'
+services:
+  node1:
+    build:
+      context: ./go-ethereum-1.13.15
+    entrypoint: ["/usr/local/bin/geth", "--datadir", "/database/node1", "--port", "30303", "--bootnodes", "enode://node2@node2:30304,enode://node3@node3:30305,enode://node4@node4:30306", "--networkid", "6570", "--unlock", "0x510f1eaad63e18e3127febedfe7fc420089fbca9", "--password", "/config/node1/password.txt", "--authrpc.port", "8551", "--mine", "--miner.etherbase", "0x510f1eaad63e18e3127febedfe7fc420089fbca9", "--http", "--http.addr", "0.0.0.0", "--http.port", "8545", "--http.api", "personal,db,eth,net,web3,txpool,miner", "--ws", "--ws.addr", "0.0.0.0", "--ws.port", "8546", "--ws.api", "personal,db,eth,net,web3,txpool,miner", "--ws.origins", "*"]
+    volumes:
+      - ./database/node1:/database/node1
+      - ./config/node1:/config/node1
+    ports:
+      - "8545:8545"
+      - "8546:8546"
+      - "8551:8551"
+      - "30303:30303"
+      - "30303:30303/udp"
+    networks:
+      - ethereum
+
+  node2:
+    build:
+      context: ./go-ethereum-1.13.15
+    entrypoint: ["/usr/local/bin/geth", "--datadir", "/database/node2", "--port", "30304", "--bootnodes", "enode://node1@node1:30303,enode://node3@node3:30305,enode://node4@node4:30306", "--networkid", "6570", "--unlock", "0x4d603d1ce3866d1a05bc309610810ba191272876", "--password", "/config/node2/password.txt", "--authrpc.port", "8552", "--mine", "--miner.etherbase", "0x510f1eaad63e18e3127febedfe7fc420089fbca9", "--http", "--http.addr", "0.0.0.0", "--http.port", "8547", "--http.api", "personal,db,eth,net,web3,txpool,miner", "--ws", "--ws.addr", "0.0.0.0", "--ws.port", "8548", "--ws.api", "personal,db,eth,net,web3,txpool,miner", "--ws.origins", "*"]
+    volumes:
+      - ./database/node2:/database/node2
+      - ./config/node2:/config/node2
+    ports:
+      - "8547:8547"
+      - "8548:8548"
+      - "8552:8552"
+      - "30304:30304"
+      - "30304:30304/udp"
+    networks:
+      - ethereum
+
+  node3:
+    build:
+      context: ./go-ethereum-1.13.15
+    entrypoint: ["/usr/local/bin/geth", "--datadir", "/database/node3", "--port", "30305", "--bootnodes", "enode://node1@node1:30303,enode://node2@node2:30304,enode://node4@node4:30306", "--networkid", "6570", "--unlock", "0xf4c0686f70d4c83812781eb35f004289c1fe4b33", "--password", "/config/node3/password.txt", "--authrpc.port", "8553", "--mine", "--miner.etherbase", "0x510f1eaad63e18e3127febedfe7fc420089fbca9", "--http", "--http.addr", "0.0.0.0", "--http.port", "8549", "--http.api", "personal,db,eth,net,web3,txpool,miner", "--ws", "--ws.addr", "0.0.0.0", "--ws.port", "8550", "--ws.api", "personal,db,eth,net,web3,txpool,miner", "--ws.origins", "*"]
+    volumes:
+      - ./database/node3:/database/node3
+      - ./config/node3:/config/node3
+    ports:
+      - "8549:8549"
+      - "8550:8550"
+      - "8553:8553"
+      - "30305:30305"
+      - "30305:30305/udp"
+    networks:
+      - ethereum
+
+  node4:
+    build:
+      context: ./go-ethereum-1.13.15
+    entrypoint: ["/usr/local/bin/geth", "--datadir", "/database/node4", "--port", "30306", "--bootnodes", "enode://node1@node1:30303,enode://node2@node2:30304,enode://node3@node3:30305", "--networkid", "6570", "--unlock", "0x59e74cd2abcf22924805e6445d2a8cab94f5f74c", "--password", "/config/node4/password.txt", "--authrpc.port", "8554", "--mine", "--miner.etherbase", "0x510f1eaad63e18e3127febedfe7fc420089fbca9", "--http", "--http.addr", "0.0.0.0", "--http.port", "8555", "--http.api", "personal,db,eth,net,web3,txpool,miner", "--ws", "--ws.addr", "0.0.0.0", "--ws.port", "8556", "--ws.api", "personal,db,eth,net,web3,txpool,miner", "--ws.origins", "*"]
+    volumes:
+      - ./database/node4:/database/node4
+      - ./config/node4:/config/node4
+    ports:
+      - "8555:8555"
+      - "8556:8556"
+      - "8554:8554"
+      - "30306:30306"
+      - "30306:30306/udp"
+    networks:
+      - ethereum
+
+networks:
+  ethereum:
+    driver: bridge
