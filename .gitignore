@@ -1,5 +1,5 @@
 **/password.txt
 **/node_modules/
 **/package-lock.json
-**/build/
+go-ethereum-1.13.15/build/bin
 
