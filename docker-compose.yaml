@@ -4,7 +4,7 @@ services:
     build:
       context: ./go-ethereum-1.13.15
       dockerfile: Dockerfile
-    entrypoint: ["/usr/local/bin/geth", "--datadir", "usr/local/bin/database", "--port", "30303", "--bootnodes", "enode://170903dd013e575fff79cd1e95676928b00657b0c717107dd39b7fe937f5c59023ba6e8b4df1c7c2a50d6d5b25de946809d7715fb3cede556650157049dcf52c@node2:30304,enode://8c9183805255ec95e12b88d5c7dbf3915d7a99199596cc922968c9ccffcdcab87ba26a54bba5f89f5183cf7dd3586086a6278a7a5504c80b0751664e2b448b0e@node3:30305,enode://84f0418b7407d7a534d09a2bffcc4a36ffa06ca68439351d2fb12772a4e4721a0afcca727f8e35f824f1d33b0463997e29bc504da2bce8a76a3136f1cbefb9e9@node4:30306", "--networkid", "6570", "--keystore", "/usr/local/bin/config/keystore", "--unlock", "0x510f1eaad63e18e3127febedfe7fc420089fbca9", "--password", "usr/local/bin/config/password.txt", "--allow-insecure-unlock", "--authrpc.port", "8551", "--mine", "--miner.etherbase", "0x510f1eaad63e18e3127febedfe7fc420089fbca9", "--http", "--http.addr", "127.0.0.1", "--http.port", "8545", "--http.api", "personal,db,eth,net,web3,txpool,miner", "--ws", "--ws.addr", "127.0.0.1", "--ws.port", "8546", "--ws.api", "personal,db,eth,net,web3,txpool,miner", "--ws.origins", "*"]
+    entrypoint: ["/usr/local/bin/geth", "--datadir", "usr/local/bin/database", "--port", "30303", "--bootnodes", "enode://170903dd013e575fff79cd1e95676928b00657b0c717107dd39b7fe937f5c59023ba6e8b4df1c7c2a50d6d5b25de946809d7715fb3cede556650157049dcf52c@node2:30303,enode://8c9183805255ec95e12b88d5c7dbf3915d7a99199596cc922968c9ccffcdcab87ba26a54bba5f89f5183cf7dd3586086a6278a7a5504c80b0751664e2b448b0e@node3:30303,enode://84f0418b7407d7a534d09a2bffcc4a36ffa06ca68439351d2fb12772a4e4721a0afcca727f8e35f824f1d33b0463997e29bc504da2bce8a76a3136f1cbefb9e9@node4:30303", "--networkid", "6570", "--keystore", "/usr/local/bin/config/keystore", "--unlock", "0x510f1eaad63e18e3127febedfe7fc420089fbca9", "--password", "usr/local/bin/config/password.txt", "--allow-insecure-unlock", "--authrpc.port", "8551", "--mine", "--miner.etherbase", "0x510f1eaad63e18e3127febedfe7fc420089fbca9", "--http", "--http.addr", "0.0.0.0", "--http.port", "8545", "--http.api", "personal,db,eth,net,web3,txpool,miner", "--ws", "--ws.addr", "0.0.0.0", "--ws.port", "8546", "--ws.api", "personal,db,eth,net,web3,txpool,miner", "--ws.origins", "*", "--http.corsdomain", "https://remix.ethereum.org"]
     volumes:
       - ./database/node1:/usr/local/bin/database
       - ./config/node1:/usr/local/bin/config
@@ -21,16 +21,16 @@ services:
     build:
       context: ./go-ethereum-1.13.15
       dockerfile: Dockerfile
-    entrypoint: ["/usr/local/bin/geth", "--datadir", "/usr/local/bin/database", "--port", "30304", "--bootnodes", "enode://c9a0a179800c383e3fac46f8c56322224cbd4fdabeb31b450a3fd56c107d11ad852621bb7ceead5b56d8172bfae1f5d01b770c2378757fadabb614dd41a19eff@node1:30303,enode://8c9183805255ec95e12b88d5c7dbf3915d7a99199596cc922968c9ccffcdcab87ba26a54bba5f89f5183cf7dd3586086a6278a7a5504c80b0751664e2b448b0e@node3:30305,enode://84f0418b7407d7a534d09a2bffcc4a36ffa06ca68439351d2fb12772a4e4721a0afcca727f8e35f824f1d33b0463997e29bc504da2bce8a76a3136f1cbefb9e9@node4:30306", "--networkid", "6570", "--keystore", "/usr/local/bin/config/keystore", "--unlock", "0x4d603d1ce3866d1a05bc309610810ba191272876", "--password", "usr/local/bin/config/password.txt", "--allow-insecure-unlock", "--authrpc.port", "8552", "--mine", "--miner.etherbase", "0x4d603d1ce3866d1a05bc309610810ba191272876", "--http", "--http.addr", "127.0.0.1", "--http.port", "8547", "--http.api", "personal,db,eth,net,web3,txpool,miner", "--ws", "--ws.addr", "127.0.0.1", "--ws.port", "8548", "--ws.api", "personal,db,eth,net,web3,txpool,miner", "--ws.origins", "*"]
+    entrypoint: ["/usr/local/bin/geth", "--datadir", "/usr/local/bin/database", "--port", "30303", "--bootnodes", "enode://c9a0a179800c383e3fac46f8c56322224cbd4fdabeb31b450a3fd56c107d11ad852621bb7ceead5b56d8172bfae1f5d01b770c2378757fadabb614dd41a19eff@node1:30303,enode://8c9183805255ec95e12b88d5c7dbf3915d7a99199596cc922968c9ccffcdcab87ba26a54bba5f89f5183cf7dd3586086a6278a7a5504c80b0751664e2b448b0e@node3:30303,enode://84f0418b7407d7a534d09a2bffcc4a36ffa06ca68439351d2fb12772a4e4721a0afcca727f8e35f824f1d33b0463997e29bc504da2bce8a76a3136f1cbefb9e9@node4:30303", "--networkid", "6570", "--keystore", "/usr/local/bin/config/keystore", "--unlock", "0x4d603d1ce3866d1a05bc309610810ba191272876", "--password", "usr/local/bin/config/password.txt", "--allow-insecure-unlock", "--authrpc.port", "8552", "--mine", "--miner.etherbase", "0x4d603d1ce3866d1a05bc309610810ba191272876", "--http", "--http.addr", "0.0.0.0", "--http.port", "8547", "--http.api", "personal,db,eth,net,web3,txpool,miner", "--ws", "--ws.addr", "0.0.0.0", "--ws.port", "8548", "--ws.api", "personal,db,eth,net,web3,txpool,miner", "--ws.origins", "*", "--http.corsdomain", "https://remix.ethereum.org"]
     volumes:
       - ./database/node2:/usr/local/bin/database
       - ./config/node2:/usr/local/bin/config
     ports:
-      - "8547:8547"
-      - "8548:8548"
-      - "8552:8552"
-      - "30304:30304"
-      - "30304:30304/udp"
+      - "8547:8545"
+      - "8548:8546"
+      - "8552:8551"
+      - "30304:30303"
+      - "30304:30303/udp"
     networks:
       - ethereum
 
@@ -38,16 +38,16 @@ services:
     build:
       context: ./go-ethereum-1.13.15
       dockerfile: Dockerfile
-    entrypoint: ["/usr/local/bin/geth", "--datadir", "/usr/local/bin/database", "--port", "30305", "--bootnodes", "enode://c9a0a179800c383e3fac46f8c56322224cbd4fdabeb31b450a3fd56c107d11ad852621bb7ceead5b56d8172bfae1f5d01b770c2378757fadabb614dd41a19eff@node1:30303,enode://170903dd013e575fff79cd1e95676928b00657b0c717107dd39b7fe937f5c59023ba6e8b4df1c7c2a50d6d5b25de946809d7715fb3cede556650157049dcf52c@node2:30304,enode://84f0418b7407d7a534d09a2bffcc4a36ffa06ca68439351d2fb12772a4e4721a0afcca727f8e35f824f1d33b0463997e29bc504da2bce8a76a3136f1cbefb9e9@node4:30306", "--networkid", "6570", "--keystore", "/usr/local/bin/config/keystore", "--unlock", "0xf4c0686f70d4c83812781eb35f004289c1fe4b33", "--password", "usr/local/bin/config/password.txt", "--allow-insecure-unlock", "--authrpc.port", "8553", "--mine", "--miner.etherbase", "0xf4c0686f70d4c83812781eb35f004289c1fe4b33", "--http", "--http.addr", "127.0.0.1", "--http.port", "8549", "--http.api", "personal,db,eth,net,web3,txpool,miner", "--ws", "--ws.addr", "127.0.0.1", "--ws.port", "8550", "--ws.api", "personal,db,eth,net,web3,txpool,miner", "--ws.origins", "*"]
+    entrypoint: ["/usr/local/bin/geth", "--datadir", "/usr/local/bin/database", "--port", "30303", "--bootnodes", "enode://c9a0a179800c383e3fac46f8c56322224cbd4fdabeb31b450a3fd56c107d11ad852621bb7ceead5b56d8172bfae1f5d01b770c2378757fadabb614dd41a19eff@node1:30303,enode://170903dd013e575fff79cd1e95676928b00657b0c717107dd39b7fe937f5c59023ba6e8b4df1c7c2a50d6d5b25de946809d7715fb3cede556650157049dcf52c@node2:30303,enode://84f0418b7407d7a534d09a2bffcc4a36ffa06ca68439351d2fb12772a4e4721a0afcca727f8e35f824f1d33b0463997e29bc504da2bce8a76a3136f1cbefb9e9@node4:30303", "--networkid", "6570", "--keystore", "/usr/local/bin/config/keystore", "--unlock", "0xf4c0686f70d4c83812781eb35f004289c1fe4b33", "--password", "usr/local/bin/config/password.txt", "--allow-insecure-unlock", "--authrpc.port", "8553", "--mine", "--miner.etherbase", "0xf4c0686f70d4c83812781eb35f004289c1fe4b33", "--http", "--http.addr", "0.0.0.0", "--http.port", "8549", "--http.api", "personal,db,eth,net,web3,txpool,miner", "--ws", "--ws.addr", "0.0.0.0", "--ws.port", "8550", "--ws.api", "personal,db,eth,net,web3,txpool,miner", "--ws.origins", "*", "--http.corsdomain", "https://remix.ethereum.org"]
     volumes:
       - ./database/node3:/usr/local/bin/database
       - ./config/node3:/usr/local/bin/config
     ports:
-      - "8549:8549"
-      - "8550:8550"
-      - "8553:8553"
-      - "30305:30305"
-      - "30305:30305/udp"
+      - "8549:8545"
+      - "8550:8546"
+      - "8553:8551"
+      - "30305:30303"
+      - "30305:30303/udp"
     networks:
       - ethereum
 
@@ -55,16 +55,16 @@ services:
     build:
       context: ./go-ethereum-1.13.15
       dockerfile: Dockerfile
-    entrypoint: ["/usr/local/bin/geth", "--datadir", "/usr/local/bin/database", "--port", "30306", "--bootnodes", "enode://c9a0a179800c383e3fac46f8c56322224cbd4fdabeb31b450a3fd56c107d11ad852621bb7ceead5b56d8172bfae1f5d01b770c2378757fadabb614dd41a19eff@node1:30303,enode://170903dd013e575fff79cd1e95676928b00657b0c717107dd39b7fe937f5c59023ba6e8b4df1c7c2a50d6d5b25de946809d7715fb3cede556650157049dcf52c@node2:30304,enode://8c9183805255ec95e12b88d5c7dbf3915d7a99199596cc922968c9ccffcdcab87ba26a54bba5f89f5183cf7dd3586086a6278a7a5504c80b0751664e2b448b0e@node3:30305", "--networkid", "6570", "--keystore", "/usr/local/bin/config/keystore", "--unlock", "0x59e74cd2abcf22924805e6445d2a8cab94f5f74c", "--password", "usr/local/bin/config/password.txt", "--allow-insecure-unlock", "--authrpc.port", "8554", "--mine", "--miner.etherbase", "0x59e74cd2abcf22924805e6445d2a8cab94f5f74c", "--http", "--http.addr", "127.0.0.1", "--http.port", "8555", "--http.api", "personal,db,eth,net,web3,txpool,miner", "--ws", "--ws.addr", "127.0.0.1", "--ws.port", "8556", "--ws.api", "personal,db,eth,net,web3,txpool,miner", "--ws.origins", "*"]
+    entrypoint: ["/usr/local/bin/geth", "--datadir", "/usr/local/bin/database", "--port", "30303", "--bootnodes", "enode://c9a0a179800c383e3fac46f8c56322224cbd4fdabeb31b450a3fd56c107d11ad852621bb7ceead5b56d8172bfae1f5d01b770c2378757fadabb614dd41a19eff@node1:30303,enode://170903dd013e575fff79cd1e95676928b00657b0c717107dd39b7fe937f5c59023ba6e8b4df1c7c2a50d6d5b25de946809d7715fb3cede556650157049dcf52c@node2:30303,enode://8c9183805255ec95e12b88d5c7dbf3915d7a99199596cc922968c9ccffcdcab87ba26a54bba5f89f5183cf7dd3586086a6278a7a5504c80b0751664e2b448b0e@node3:30303", "--networkid", "6570", "--keystore", "/usr/local/bin/config/keystore", "--unlock", "0x59e74cd2abcf22924805e6445d2a8cab94f5f74c", "--password", "usr/local/bin/config/password.txt", "--allow-insecure-unlock", "--authrpc.port", "8554", "--mine", "--miner.etherbase", "0x59e74cd2abcf22924805e6445d2a8cab94f5f74c", "--http", "--http.addr", "0.0.0.0", "--http.port", "8555", "--http.api", "personal,db,eth,net,web3,txpool,miner", "--ws", "--ws.addr", "0.0.0.0", "--ws.port", "8556", "--ws.api", "personal,db,eth,net,web3,txpool,miner", "--ws.origins", "*", "--http.corsdomain", "https://remix.ethereum.org"]
     volumes:
       - ./database/node4:/usr/local/bin/database
       - ./config/node4:/usr/local/bin/config
     ports:
-      - "8555:8555"
-      - "8556:8556"
-      - "8554:8554"
-      - "30306:30306"
-      - "30306:30306/udp"
+      - "8555:8545"
+      - "8556:8546"
+      - "8554:8551"
+      - "30306:30303"
+      - "30306:30303/udp"
     networks:
       - ethereum
 
