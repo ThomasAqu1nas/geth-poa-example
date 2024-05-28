@@ -1,27 +1,27 @@
 {
-    "config": {
-      "chainId": 6570,
-      "homesteadBlock": 0,
-      "eip150Block": 0,
-      "eip155Block": 0,
-      "eip158Block": 0,
-      "byzantiumBlock": 0,
-      "constantinopleBlock": 0,
-      "petersburgBlock": 0,
-      "istanbulBlock": 0,
-      "berlinBlock": 0,
-      "clique": {
-        "period": 5,
-        "epoch": 30000
-      }
-    },
-    "difficulty": "1",
-    "gasLimit": "8000000",
-    "extradata": "0x0000000000000000000000000000000000000000000000000000000000000000510f1EAAD63E18E3127FEBEDFe7fC420089fBCA959e74Cd2AbCf22924805e6445D2A8Cab94F5F74c0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
-    "alloc": {
-      "510f1EAAD63E18E3127FEBEDFe7fC420089fBCA9": { "balance": "999999999997" },
-      "4D603d1ce3866D1a05bc309610810Ba191272876": { "balance": "1" },
-      "f4C0686F70d4c83812781Eb35f004289c1fE4b33": { "balance": "1" },
-      "59e74Cd2AbCf22924805e6445D2A8Cab94F5F74c": { "balance": "1" }
+  "config": {
+    "chainId": 6570,
+    "homesteadBlock": 0,
+    "eip150Block": 0,
+    "eip155Block": 0,
+    "eip158Block": 0,
+    "byzantiumBlock": 0,
+    "constantinopleBlock": 0,
+    "petersburgBlock": 0,
+    "istanbulBlock": 0,
+    "berlinBlock": 0,
+    "clique": {
+      "period": 5,
+      "epoch": 30000
     }
+  },
+  "difficulty": "1",
+  "gasLimit": "8000000",
+  "extradata": "0x0000000000000000000000000000000000000000000000000000000000000000510f1EAAD63E18E3127FEBEDFe7fC420089fBCA94D603d1ce3866D1a05bc309610810Ba191272876f4C0686F70d4c83812781Eb35f004289c1fE4b3359e74Cd2AbCf22924805e6445D2A8Cab94F5F74c0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+  "alloc": {
+    "510f1EAAD63E18E3127FEBEDFe7fC420089fBCA9": { "balance": "999999999997" },
+    "4D603d1ce3866D1a05bc309610810Ba191272876": { "balance": "1" },
+    "f4C0686F70d4c83812781Eb35f004289c1fE4b33": { "balance": "1" },
+    "59e74Cd2AbCf22924805e6445D2A8Cab94F5F74c": { "balance": "1" }
+  }
 }

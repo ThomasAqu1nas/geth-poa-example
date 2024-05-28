@@ -17,7 +17,7 @@
   l0_compaction_threshold=4
   l0_stop_writes_threshold=12
   lbase_max_bytes=67108864
-  max_concurrent_compactions=12
+  max_concurrent_compactions=8
   max_manifest_file_size=134217728
   max_open_files=16
   mem_table_size=4194304
@@ -27,7 +27,7 @@
   read_compaction_rate=16000
   read_sampling_multiplier=-1
   strict_wal_tail=true
-  table_cache_shards=12
+  table_cache_shards=8
   table_property_collectors=[]
   validate_on_ingest=false
   wal_dir=
